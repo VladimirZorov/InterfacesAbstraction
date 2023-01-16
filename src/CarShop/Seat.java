@@ -2,6 +2,8 @@ package CarShop;
 
 public class Seat implements Car {
 
+    private static final int TIRE = 4;
+
     private String model;
     private String color;
     private int horsePower;
@@ -37,6 +39,6 @@ public class Seat implements Car {
     @Override
     public String toString() {
         return String.format("This is %s produced in %s and have %d tires",
-                model, countryProduced, Car.TIRES);
+                model, countryProduced, Seat.TIRES);
     }
 }
