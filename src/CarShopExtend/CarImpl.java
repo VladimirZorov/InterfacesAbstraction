@@ -1,6 +1,8 @@
 package CarShopExtend;
 
-public class CarImpl implements Car{
+public class CarImpl{
+
+    private static final int TIRES = 4;
 
     private String model;
     private String color;
@@ -14,33 +16,24 @@ public class CarImpl implements Car{
         this.countryProduced = countryProduced;
     }
 
-    @Override
+
     public String getModel() {
-        return null;
+        return model;
     }
 
-    @Override
+
     public String getColor() {
-        return null;
+        return color;
     }
 
-    @Override
+
     public int getHorsePower() {
-        return 0;
-    }
-
-    @Override
-    public String countryProduced() {
-        return null;
+        return horssePower;
     }
 
     @Override
     public String toString() {
-        return "CarImpl{" +
-                "model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", horssePower=" + horssePower +
-                ", countryProduced='" + countryProduced + '\'' +
-                '}';
+        return String.format("This is %s produced in %s and have %d tires",
+                model, countryProduced, TIRES);
     }
 }
