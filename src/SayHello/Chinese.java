@@ -15,6 +15,6 @@ public class Chinese implements Person{
 
     @Override
     public String sayHello() {
-        return null;
+        return "Djydjybydjy";
     }
 }
