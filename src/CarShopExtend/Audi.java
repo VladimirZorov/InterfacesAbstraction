@@ -1,6 +1,6 @@
 package CarShopExtend;
 
-public class Audi extends CarImpl{
+public class Audi extends CarImpl implements Rentable{
 
     private Integer minRentDay;
     private Double pricePerDay;
@@ -12,6 +12,15 @@ public class Audi extends CarImpl{
         this.pricePerDay = pricePerDay;
     }
 
+    @Override
+    public Integer getMinRentDay() {
+        return minRentDay;
+    }
+
+    @Override
+    public Double getPricePerDay() {
+        return pricePerDay;
+    }
 
 
     @Override
@@ -19,4 +28,6 @@ public class Audi extends CarImpl{
         return String.format("%s%nMinimum rental period of %d days. Price per day %.6f"
                 ,super.toString(), minRentDay, pricePerDay);
     }
+
+
 }

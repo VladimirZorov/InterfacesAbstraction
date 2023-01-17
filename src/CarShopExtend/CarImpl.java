@@ -1,6 +1,6 @@
 package CarShopExtend;
 
-public class CarImpl{
+public class CarImpl implements Car{
 
     private static final int TIRES = 4;
 
@@ -29,6 +29,11 @@ public class CarImpl{
 
     public int getHorsePower() {
         return horssePower;
+    }
+
+    @Override
+    public String countryProduced() {
+        return countryProduced;
     }
 
     @Override

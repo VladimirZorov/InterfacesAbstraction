@@ -1,6 +1,6 @@
 package CarShopExtend;
 
-public class Seat extends CarImpl{
+public class Seat extends CarImpl implements Sellable{
 
     private Double price;
 
@@ -10,8 +10,15 @@ public class Seat extends CarImpl{
     }
 
     @Override
+    public Double getPrice() {
+        return price;
+    }
+
+    @Override
     public String toString() {
         return String.format(
                 "%s%n%s sells for %.6f",super.toString(),getModel(), price);
     }
+
+
 }
