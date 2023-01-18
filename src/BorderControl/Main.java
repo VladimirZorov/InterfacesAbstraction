@@ -6,15 +6,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String [] data = new String[0];
+       ArrayList<String> data = new ArrayList<>();
 
         String input = scanner.nextLine();
         while (!input.equals("End")) {
-            data = input.split(" ");
+            data.add(input);
 
             input = scanner.nextLine();
         }
 
         int fakeIdLastNumber = Integer.parseInt(scanner.nextLine());
     }
+
+    
+
+
 }
