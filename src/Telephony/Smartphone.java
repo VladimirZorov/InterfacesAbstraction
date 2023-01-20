@@ -9,41 +9,41 @@ public class Smartphone implements Callable, Browsable{
     private List<String> urls;
 
     public Smartphone(List<String> numbers, List<String> urls) {
-        this.numbers = new ArrayList<>();
-        this.urls = new ArrayList<>();
+        this.numbers = numbers;
+        this.urls = urls;
     }
 
     @Override
     public String call() {
-        String browse = null;
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < numbers.size(); i++) {
-            if (isDigit(numbers.get(i))){
-                sb.append("Invalid number!");
+        for (String call : numbers) {
+            if (isDigit(call)) {
+                sb.append("Invalid number!").append(System.lineSeparator());
             } else {
-                sb.append(numbers.get(i));
+                sb.append(String.format("Calling... %s%n",call));
             }
-            return browse;
         }
-        return numbers.get(0);
+        return sb.toString();
     }
 
     @Override
     public String browse() {
-        String call = null;
-        for (int i = 0; i < urls.size(); i++) {
-            if (urls.get(i).contains("y")) {
-                call = "Invalid URL!";
+        StringBuilder sb = new StringBuilder();
+        for (String url : urls) {
+            if (!isDigit(url)) {
+                sb.append("Invalid URL!").append(System.lineSeparator());
             } else {
-                call = urls.get(i);
+                sb.append(String.format("Browsing: %s!%n",url));
             }
         }
-        return String.format(call);
+        return sb.toString();
     }
     public boolean isDigit(String symbol) {
-        if (Character.isDigit(symbol.charAt(1))){
-            return true;
+        for (int i = 0; i < symbol.length(); i++) {
+            if (Character.isDigit(symbol.charAt(i))) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 }
